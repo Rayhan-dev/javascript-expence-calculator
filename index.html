@@ -56,8 +56,14 @@
               <h3>balance: <span id="balance">0</span></h3>
             </div>
             <div class="saving_div">
-              <span>save:</span><input type="text" /> <span> % </span
-              ><button id="save_calculate" class="btn btn-primary" href="#">
+              <label>save:</label><input id="saving_field" type="text" />
+              <span> % </span>
+              <button
+                onclick="savingCalculation()"
+                id="save_calculate"
+                class="btn btn-primary"
+                href="#"
+              >
                 Calculate
               </button>
               <h3>saving amount: <span id="saving_ammount">0</span></h3>
