@@ -31,45 +31,32 @@ function calculatingExpenses(){
     }else if(incomeAmmount<totalCost){
         alert("You can't spend more than you have!");
     }else{
+        // displaying values on UI 
         totalExpenses.innerText= totalCost;
         balanceAfterExpenses.innerText=incomeAmmount-totalCost;
     }
 }
+// saving part calculations 
 function calculatingSavings(){
+    // diclaring variables to get values 
     var balanceAfterExpenses = getElement("balance");
     var totalExpenses = getElement("total_expenses");
     var incomeAmmount = getParsedValue("income_field");
     var savingsPercentage = getParsedValue("saving_field"); 
     var savingAmmout = getElement('saving_ammount');
     var remainingBalance = getElement('remaining_balance');
+    // calculating savings 
     var savings = (savingsPercentage/100)*incomeAmmount;
-    var finalRemainingBalance= incomeAmmount-(savings+ parseInt(totalExpenses.innerText));
+    // last remaing money 
+    var finalRemainingBalance= parseInt(balanceAfterExpenses.innerText) - savings;
+    // validating errors in saving section 
     if(savings>parseInt(balanceAfterExpenses.innerText)){
         alert("you cant save more than you have!");
     }else if(savingsPercentage<0 || isNaN(savingsPercentage) ){
         alert("'saving percentage can't be negative or string!");
     }else{
+        // displaying values on UI 
         savingAmmout.innerText=savings;
         remainingBalance.innerText=finalRemainingBalance;
     }
 }
-
-        
-
-
-
-// function savingCalculation(){
-//     var savingPercentage = getParsedValue('saving_field');
-//     var savingAmount = getElement('saving_ammount');
-//     var remainingBalance = getElement('remaining_balance');
-//     var updatedSavings =(savingPercentage/100)*incomeAmmount;
-//     var updatedRemainingBalance = incomeAmmount-(parseInt(totalExpenses.innerText)+updatedSavings);
-//     if(updatedSavings>balanceAfterExpenses.innerText){
-//         alert("you cant save more than you have!");
-//     }else if(savingPercentage.value<0){
-//         alert("'saving percentage' can't be negative");
-//     }else{
-//         savingAmount.innerText = updatedSavings;
-//         remainingBalance.innerText=updatedRemainingBalance;
-//     }
-// }   

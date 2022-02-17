@@ -20,7 +20,7 @@
       <h1 class="text-success my-5">Expense Calculator</h1>
       <div class="row align-items-center">
         <div class="col-md-6 my-2">
-          <div class=" ">
+          <div>
             <img
               src="images/pexels-olia-danilevich-5466820.jpg"
               alt=""
@@ -30,20 +30,25 @@
         </div>
         <div class="col-md-6 input_Section py-5 my-2">
           <div>
+            <!-- income  -->
             <div class="income_div">
               <h4>Income</h4>
               <label>Income:</label>
               <input id="income_field" type="text" />
             </div>
+            <!-- expense -->
             <div class="expenses_div">
               <h4>Expenses</h4>
+              <!-- food  -->
               <label>Food:</label>
               <input id="food_field" type="text" /> <br />
+              <!-- rent -->
               <label>Rent:</label>
               <input id="rent_field" type="text" /> <br />
+              <!-- cloths  -->
               <label>Clothes:</label>
               <input id="clothes_field" type="text" /> <br />
-
+              <!-- expenses button  -->
               <button
                 onclick="calculatingExpenses()"
                 id="calculate_btn"
@@ -58,6 +63,7 @@
             <div class="saving_div">
               <label>save:</label><input id="saving_field" type="text" />
               <span> % </span>
+              <!-- saving calcution button  -->
               <button
                 onclick="calculatingSavings()"
                 id="save_calculate"
